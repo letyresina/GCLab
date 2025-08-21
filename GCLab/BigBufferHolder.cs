@@ -9,7 +9,7 @@ static class BigBufferHolder
     public static byte[] Run()
     {
         var data = new byte[1000]; 
-        _cache.Set("big-buffer", data); // armazena no cache
+        _cache.Set("big-buffer", data, TimeSpan.FromMinutes(10)); // armazena no cache
         return data;
     }
 }
