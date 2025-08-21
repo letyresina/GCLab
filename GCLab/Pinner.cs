@@ -1,4 +1,3 @@
-using System.Runtime;
 using System.Runtime.InteropServices;
 
 namespace GCLab;
@@ -9,12 +8,10 @@ namespace GCLab;
 class Pinner
 {
     private GCHandle _handle;
-
     public byte[] PinLongTime()
     {
         var data = new byte[256];
         _handle = GCHandle.Alloc(data, GCHandleType.Pinned); // pin prolongado
         return data;
     }
-
 }
